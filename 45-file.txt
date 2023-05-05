@@ -1,0 +1,28 @@
+
+iptables -A INPUT -p icmp --icmp-type echo-request 
+	-m limit --limit 1/sec --limit-burst 7 -j ACCEPT
+
+ - accepts icmp packets , only 1 per second will be accepted
+ - after the first 7 packets
+
+iptables -A INPUT -p icmp --icmp-type echo-request 
+  -j DROP
+
+ - accepts icmp packets , only 1 per second will be accepted
+ - after the first 7 packets
+
+iptables -vnL
+
+ - check the updated iptables
+
+tcpdump icmp -n
+
+ - show icmp packet count
+
+ping -i 0.1 192.168.1.100
+
+Limiting the packet rate can be achieved by using these commands
+
+
+
+
