@@ -1,0 +1,16 @@
+clear firewall
+
+iptables -P INPUT ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -P FORWARD ACCEPT
+
+iptables -t filter -F
+iptables -t raw -F
+iptables -t nat -F
+iptables -t mangle -F
+
+iptables -X <-- all user defined chains
+
+ipset -F <-- flush all sets
+ipset -X <-- destroy all sets
+
