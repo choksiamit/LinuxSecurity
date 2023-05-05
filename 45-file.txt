@@ -1,3 +1,4 @@
+Limiting packet burst 
 
 iptables -A INPUT -p icmp --icmp-type echo-request 
 	-m limit --limit 1/sec --limit-burst 7 -j ACCEPT
@@ -24,5 +25,7 @@ ping -i 0.1 192.168.1.100
 Limiting the packet rate can be achieved by using these commands
 
 
+iptables -A INPUT -p tcp --dport 443 --syn -m limit --limit 5/sec -j ACCEPT
+iptables -A INPUT -p tcp --dport 443 --syn -j DROP
 
-
+ - ALLOW ONLY 5 new incoming connections per second to port 443 
