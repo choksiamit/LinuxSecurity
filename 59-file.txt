@@ -1,0 +1,32 @@
+badhosts.txt
+1.1.1.1
+2.2.2.2
+3.3.3.3
+
+save file
+
+bash script that reads the file 
+adds to ipset
+write a iptables rule to use the set
+
+#!/bin/bash
+
+FILE='bad_hosts.txt'
+
+ipset -N bad_hosts iphash -exist
+
+ipset -F bad_hosts
+
+echo "Adding IPs from bad_hosts file to set"
+
+for ip in `cat $FILE`
+do
+	ipset -A  bad_hosts $ip
+	echo -n $ip
+done
+
+echo -e -n "\nDropping with iptables..."
+
+iptables -I INPUT -m set --match-set bad_hosts src -j DROP
+
+echo 'Done'
