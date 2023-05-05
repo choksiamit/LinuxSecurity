@@ -1,0 +1,4 @@
+ipset an extension of iptables
+
+allow us to create firewall rules for an entire set of ip addresses
+
