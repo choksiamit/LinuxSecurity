@@ -1,0 +1,34 @@
+
+ipset 
+
+iptables -vnL
+
+1)
+
+iptables -A INPUT -s 1.1.1.1 -j DROP
+iptables -A INPUT -s 2.2.2.2 -j DROP
+iptables -A INPUT -s 8.8.8.8 -j DROP
+
+2) Another way to do this is with ipset
+
+ipset -N myset hash:ip
+
+ipset -A myset 1.1.1.1
+ipset -A myset 2.2.2.2
+ipset -A myset 8.8.8.8
+
+ping 8.8.8.8 <-- should work
+
+iptables -A INPUT -m set --match-set myset src -j DROP
+
+ping 8.8.8.8 <-- should fail 
+ping 2.2.2.2 <-- should fail 
+ping 1.1.1.1 <-- should fail 
+
+iptables -nvL
+
+will show packets dropped by the rule 
+one command is used for any number 10000+ addresses.
+
+
+
