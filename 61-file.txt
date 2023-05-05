@@ -1,0 +1,43 @@
+
+drop all traffic from areas you do not accept any traffic
+adding each ip for every country cannot scale
+
+
+
+#block all traffic that originates from c
+
+echo "blocking c'
+
+ipset -N china hash:net -exist
+ipset -F china
+
+#download a file that contains all addresses from china
+
+if [ -f 'cn-aggregated.zone' ]
+then
+	rm cn-aggregated.zone
+fi
+# get it from ipdeny.com
+
+wget http://ipdeny.com/ipblocks/data/aggregated/cn-aggregated.zone
+
+if [ $? -eq 0 ]
+then
+	echo 'Download finished!'
+fi
+
+echo
+
+echo -n 'Adding networks to ipset ...'
+
+for net in `cat cn-aggregated.zone`
+do
+	ipset -A china $net
+done
+
+echo -n 'blocking Cn with iptables ...'
+iptables -I INPUT -m set --match-set china src -j DROP
+
+echo 'Done'
+
+
