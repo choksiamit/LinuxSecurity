@@ -1,0 +1,15 @@
+
+ipset -X <-- deletes all sets
+ipset -N auto_blocked iphash -exist <-- no error if it exists
+
+iptables -I INPUt -p tcp --dport 80 -j SET --add-set auto_blocked src  <-- dynamically 
+iptables -A auto_blocked 1.2.4.5 <-- statically
+iptables -I INPUT -m set --match-set auto_blocked -j DROP
+
+ping -t 192.168.1.127 <-- ping continuously
+telnet 192.168.1.127 80 <-- ping will be stopped as packets tried to access port 80
+
+
+
+
+
