@@ -1,0 +1,41 @@
+
+ipsets depth
+
+ipset -N china hash:ip
+ipset -N china hash:net
+ipset -N china nethash
+
+
+ipset create romania hash:net -exist
+ipset create romania hash:ip -exist
+ipset create romania nethash -exist
+
+ipset create romania1 hash:ip -exist
+
+Create add entries in set
+ipset create china hash:net -exist
+ipset add china 1.0.0.0/8
+ipset -A china 1.0.0.0/8
+
+List sets with entires
+ipset -L
+ipset list
+ipset -L china
+
+Delete sets
+ipset del china 1.0.0.0/8  
+ipset -D china 2.0.0.0/
+ipset -F china <-- flushes all entries
+ipset destroy chin <-- flushes all entriesa
+ipset flush china <-- flushes all entries 
+ipset -X <-- cannot destroy it if there is any iptables rule using the set
+
+iptables -vnL
+iptables -F
+iptables -vnL 
+ipset -X <-- deletes all the sets
+
+maxelem <-- default 65535 
+ipset list
+ipset create myset hash:ip maxelem 4096
+ipset list
