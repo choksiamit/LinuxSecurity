@@ -1,0 +1,42 @@
+nmap
+
+scans network discovery 
+auditing tools
+
+tcp scans -sS -sT
+udp scans -sU
+icmp scan -sn -sP 
+
+nmap -sS -p 22,100 -sV 192.168.0.1
+
+apt update && apt install nmap
+
+zenmap gui
+
+nmap 192.168.0.20 
+nmap -sS 192.168.0.20
+
+change ssl listening port
+/etc/ssh/sshd_config
+PORT 50005
+restart ssh
+
+netstat -tupan
+
+# for non-default port
+nmap -p 50005 192.168.0.20
+
+nmap -p 80,50005 -sV 192.168.0.20 
+#verbose
+
+nmap -p- 192.168.0.20
+<enter> shows the percentage of completed scan
+
+nmap localhost
+
+nmap -sn 192.168.0.20
+nmap -sP 192.168.0.0/24
+# all hosts that are up in this network.
+
+
+

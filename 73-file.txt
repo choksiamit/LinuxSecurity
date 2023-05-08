@@ -1,0 +1,9 @@
+tee target
+
+iptables -A INPUT -p icmp   
+    --icmp-type echo-request   
+    -j tee --gateway 192.168.0.20
+
+on linux 2 .20
+tcpdump icmp -n
+

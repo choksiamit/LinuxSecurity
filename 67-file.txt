@@ -1,0 +1,16 @@
+#netstat
+
+apt update && apt install net-tools
+
+netstat -tupan 
+    t tcp 
+    u udp
+    p protocol column
+    a all
+    n numeric
+
+netstat -tupan | grep 22
+    filter port 22
+
+netstat -a 
+

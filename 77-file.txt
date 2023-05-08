@@ -1,0 +1,19 @@
+configure NAT on linux
+
+windows pc --- l2switch -- linux nat router -- internet
+
+wpc 10.0.0.2
+l2switch 10.0.0.0/24
+linux nat router enp8s0
+
+
+echo "1" > /proc/sys/net/ipv4/ip_forward
+iptables -t nat -A postrouting -s 10.0.0.0/24 -o wlo1
+                                -j MASQUERADE
+
+ping an external IP
+It must work. in both directions
+
+configuration will not be saved.
+it must be written in a script
+and the script must be executed at startup.

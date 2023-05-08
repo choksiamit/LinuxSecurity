@@ -1,0 +1,20 @@
+redirect target
+
+from 1 port to another on the same machine
+setting up a transparent proxy
+
+iptables -t nat -A prerouting 
+    -p tcp
+    --dport 1234
+    -j redirect
+    -to-ports 22
+
+netstat -tupan | grep 1234
+
+connect from linux 2 to linux 1
+
+ssh -p 1234 192.168.0.20 will work
+
+packets arriving at 1234 will be redirected to port 22
+where the ssh server is listening
+

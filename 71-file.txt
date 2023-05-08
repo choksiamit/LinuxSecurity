@@ -1,0 +1,23 @@
+log target
+
+log is for a non-terminating target
+
+iptables -A INPUT -p tcp
+    --dport 22
+    --Syn
+    -j log 
+    -log-prefix="incoming ssh: "\
+    --log-level info
+iptables -A INPUT -p tcp
+    --dport 22
+    --Syn
+    -j DROP 
+
+Logged and then dropped
+
+dmesg to see the kernel logs
+kern.log 
+tail -f /var/log/kern.log
+
+** For packet contents we need to use tcpdump or wireshark
+

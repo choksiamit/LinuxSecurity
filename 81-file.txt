@@ -1,0 +1,11 @@
+create a script that configures a nat router 
+to loadbalance outgoing traffic
+
+ssh email webtraffic - ips1
+all other  - isp2
+
+
+lan -- nat_router
+eth1 - isp1
+eth2 - isp2
+

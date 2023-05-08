@@ -1,0 +1,24 @@
+DNAT
+
+Internet -> private ip addresses
+client conects to public ip address of dnat router 
+which inturn redirects traffic to the private server
+
+DNAT uses nat table and prerouting chain
+
+webserver 10.0.0.2
+l2swtich 10.0.0.0/24
+linux nat router enp3s0f2 10.0.0.1
+wlp2so public : 80.0.0.1
+internet
+
+snat must already be configured
+dnat : -j DNAT --to-destination private_ip
+
+iptables -t nat -A prerouting
+        -p tcp --dport 80
+        -j dnat --to-destination 10.0.0.2
+
+iptables -t nat -A prerouting
+        -p tcp --dport 8080
+        -j dnat --to-destination 10.0.0.2:80

@@ -1,0 +1,16 @@
+#ports
+# open closed filtered
+# accepts connections
+
+# open ports can be checked using
+netstat
+
+# closed ports
+repond too with tcp reset for tcp traffic
+icmp port unreachable for udp traffic
+
+# filtered port
+does not respond back
+
+# open filtered
+# closed filtered 

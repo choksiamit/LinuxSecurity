@@ -1,0 +1,191 @@
+Linux Security: The Complete Iptables Firewall Guide
+Course image
+83. Solution Script - NAT and Load-Balancing
+Linux Security Improved. Create professional Netfilter/Iptables Firewalls. All you need to know about Netfilter/Iptables
+Rating: 4.6 out of 5
+4.6
+1,204 ratings
+7,972
+Students
+9.5 hours
+Total
+Last updated March 2023
+English
+English [Auto]
+What you'll learn
+Acquire an in-depth understanding of the Netfilter/Iptables Linux Firewall (chains, tables, matches, targets).
+Acquire the skills to build Advanced Iptables Firewalls. Hands-on experience with Iptables.
+Learn to work efficiently with IPSET to drop large collections of IPs and Networks (like entire Countries).
+Understand Iptables best practices for creating custom Firewalls.
+Acquire the skills to configure Linux as a NAT Router.
+Acquire the skills to configure Port Forwarding on Linux Routers.
+See practical examples for EACH Iptables Command, Match or Target.
+Use Shell Scripts to automate tasks like blocking or permitting a service, an IP/Network or a MAC address.
+Apply the skills to secure servers, networks, routers or Linux Operating Systems.
+Hundreds of hands-on exercises with solutions and quizzes.
+Description
+This Iptables course covers every major topic related to Netfilter and Iptables including Ipset, advanced matches and targets, NAT, Fort Forwarding, user-defined chains, and many more!
+
+Welcome to the most complete and up-to-date course for learning and using Netfilter & Iptables Linux Firewall, taught by a DevOps Engineer and Professional Trainer.
+
+Just starting out with Linux Security and Iptables? Perfect. This course starts out assuming you're new to Netfilter, Iptables, and Linux Firewalls.
+
+Or maybe you've already tried to learn Iptables by yourself and now you want to put all the pieces together? Then, I'm here to help you! This course has everything you need to know about Netfilter and Iptables.
+
+You'll have lifetime access and you can return and look for a specific Iptables match, target or option anytime you want.
+
+All presentations and Iptables examples used in this course are available for download.
+
+The course contains many quizzes for you to take and test your knowledge.
+
+
+
+There are many courses on Linux Security or Iptables. Why should you learn from me?
+
+I'm a Practitioner and an Enthusiast. Welcome to the real world! I have almost 20 years of experience as a Linux Sysadmin, Security Engineer, and Full Stack Developer. I use Linux on a daily basis.
+
+I'm an Educator and I know how to make a syllabus. For the last 10 years, I've trained thousands of people on Linux, Networking, Security, or Programming.
+
+The topics covered in this course are:
+
+Iptables chains and tables
+
+Chains and tables traversal
+
+Anatomy of an iptables rule
+
+Filter large collections of IPs and Networks using Ipset
+
+Filter traffic by country
+
+Iptables matches (implicit & explicit).
+
+Filter Traffic by IP, Network, Port, Protocol, Interface, MAC, TCP Flags, Date and Time, Quota, etc.
+
+Iptables targets: DROP, REJECT, ACCEPT, LOG, REDIRECT, TEE, SNAT, DNAT, MASQUERADE, etc.
+
+NAT
+
+Port Forwarding
+
+Automation using shell scripts
+
+How to use Iptables Best-Practices
+
+Every topic includes many live examples.
+
+
+
+After taking this course, you'll be able to:
+
+Have an In-Depth understanding of Netfilter/Iptables architecture.
+
+Understand Iptables chains and tables.
+
+Understand how a Firewall works.
+
+Create Iptables rules that filter incoming, outgoing, or routed traffic based on any possible criteria including the country the packet is coming from or destined to.
+
+LOG malicious traffic.
+
+Prevent DoS Attacks.
+
+Use Ipset to drop tens of thousands of Networks with no performance degradation.
+
+Optimize Iptables firewalls.
+
+Automate different firewall security tasks using shell scripts.
+
+Configure NAT and MASQUERADE.
+
+Configure Port Forwarding (DNAT).
+
+Use efficiently Nmap and Netstat.
+
+Who this course is for:
+Linux Sysadmins.
+Network Administrators.
+DevOps Engineers.
+Security Professionals.
+Instructors
+Andrei Dumitrescu
+Software Engineer and Lead Instructor
+With over 15 years of experience as a Network and Software Engineer, I perfectly embody the typical profile of a DevOps Engineer with a huge passion for teaching, deeply rooted in my family for four generations.
+
+
+
+As a co-founder of Crystal Mind Academy, a prestigious Cisco Academy and professional training center, I am dedicated to teaching cutting-edge technologies to our students.
+
+
+
+My contributions to education span across various fields, including Programming, Blockchain, AI, Ethical Hacking, and Linux Operating Systems.
+
+
+
+Over the years, Crystal Mind Academy has proudly empowered more than 200,000 students through dynamic in-person and online training programs.
+
+
+
+I have meticulously crafted comprehensive documentation, labs, and case studies for a wide range of training courses, including Python Programming, Go Programming, Blockchain Programming, OpenAI API with Python, Linux Administration, Ethical Hacking, and Cisco Technologies.
+
+
+
+Outside of work, I maintain a balanced lifestyle by engaging in fitness activities like working out and jogging, delving into captivating books, and creating cherished memories with my wife and children through our shared love of travel.
+
+Crystal Mind Academy
+Teaching Cutting-Edge Technologies
+The Academy’s goal is to teach hundreds of thousands of people cutting-edge technologies in the fields of Programming and Networking.
+
+Our philosophy is that courses should be taught by real professionals with substantial experience in the industry, who are also great teachers.
+
+Courses are provided by Andrei Dumitrescu, a software engineer with over 15 years experience in the industry and in teaching offline and online course.
+
+Featured review
+Max T.
+80 courses
+34 reviews
+Rating: 5.0 out of 5
+2 years ago
+I've always wanted to get some iptables skills, but the task was like a black hole. I've accumulated a lot of links and tutorials, even read some articles, but the topic always remained in a fog of war... Now I can calmly delete all the links, because the course made them obsolete. The best thing about the course is that it's hands-on and reproducible. NOTE: I've used 2 Ubuntu 20.4 Virtual Box VMs and ran them in bridged network, to ease the Host/VM communication.
+Was this review helpful?
+
+Requirements
+Local root access to a Linux distribution like Ubuntu or CentOS. No paid software required.
+Linux basics like commands, file permissions, text editors etc.
+Basic knowledge of TCP/IP stack (how clients and servers typically communicate, TCP, UDP, ICMP, IP's, ports, etc).
+Very basic knowledge of other Networking concepts like NAT or Routing.
+Get the app
+About us
+Help and Support
+Terms
+Privacy policy
+Sitemap
+Accessibility statement
+© 2023 Udemy, Inc.
+83. Solution Script - NAT and Load-Balancing
+Solution Script - NAT and Load-Balancing
+#!/bin/bash
+ 
+##** LOAD BALANCE NAT TRAFFIC OVER 2 INTERNET CONNECTIONS WITH DYNAMIC IP ADDRESSES **##
+ 
+# Traffic that goes over the first connection
+# web: 80 443
+# email: 25 465 143 993 110 995
+# ssh: 22
+ 
+ISP1="22 25 80 110 143 443 465 993 995"
+ 
+# flushing nat table and POSTROUTING chain
+iptables -t nat -F POSTROUTING
+ 
+# enable routing
+echo "1" > /proc/sys/net/ipv4/ip_forward
+ 
+for port in $ISP1
+do
+iptables -t nat -A POSTROUTING -p tcp --dport $port -o eth1 -j MASQUERADE
+done
+ 
+ 
+# Traffic not NATed goes over the 2nd connection
+iptables -t nat -A POSTROUTING -o eth2 -j MASQUERADE

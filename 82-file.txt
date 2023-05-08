@@ -1,0 +1,23 @@
+
+
+web 80 883
+email 25 465 143 993 110 995
+ssh 22
+
+isp1 = "22 25 80 110 143 465 993 995"
+
+iptables -t nat -f postrouting
+
+echo "1" > /proc/sys/net/ipv4/ip_forward
+
+for port in $isp1 
+do 
+    iptables -t nat -A POSTROUTING
+    -p tcp --dport $port -o eth1 -j MASQUERADE
+done
+
+iptables -t nat -A postrouting -o eth2 -j MASQUERADE
+
+chmod 777 script.shared
+
+iptables -t nat -vnL
