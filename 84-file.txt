@@ -1,0 +1,14 @@
+iptables filter table
+3chains : INPUT output forward 
+it optimizes the rule sets 
+
+organized in categories
+
+-j custom-chain
+
+-n new-chain
+-l new_chain lists
+-x new_chain deletes custom chain
+-f new-chain flushes all rules from the chain
+
+-j return 
