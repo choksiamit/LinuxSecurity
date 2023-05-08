@@ -1,0 +1,17 @@
+
+iptables -F
+
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+IPTABLES -A input -p tcp -j DROP
+
+# terminating target
+   # ACCEPT    
+   # DROP
+
+iptables -vnL
+
+# non-terminating 
+
+iptables -A INPUT -p tcp --dport 22 -j LOG
+IPTABLES -A input -p tcp -j DROP
+
