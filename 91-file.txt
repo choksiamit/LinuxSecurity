@@ -1,0 +1,15 @@
+routed / forwarded packets
+
+inbound packet
+    raw table prerouting chain
+    mangle table prerouting chain
+    nat table prerouting chain
+    is it final dest 
+        yes : go to mangle tables input chain
+        no : go to mangle table FORWARD chain
+            filter table FORWARD chain
+            mangle table POSTROUTING chain
+            nat table POSTROUTING chain
+            outgoing interface
+
+        

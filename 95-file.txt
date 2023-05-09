@@ -1,0 +1,4 @@
+# create a shell script that requests an IP
+ or network address 
+
+ filter table in input chain. 

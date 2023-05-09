@@ -1,0 +1,39 @@
+
+firewall
+ - to allow only ssh traffic
+ - only outbound connections tcp
+ - drop input connections
+ - except from specific mac addresses ( 4 ) 
+
+
+iptables -f
+iptables -a output -m state --state new, established, related
+    -j ACCEPT
+
+iptables -A input -p tcp --dport 22 -j ACCEPT
+iptables -A output -p tcp --dport 22 -j ACCEPT
+
+iptables -A INPUT -m mac --mac-source  xxxx  -j ACCEPT
+
+iptables -P OUTPUT DROP
+iptables -P INPUT DROP
+
+---
+solution using custom chain
+iptables -f
+iptables -a output -m state --state new, established, related
+    -j ACCEPT
+
+iptables -N ACCEPTED_MAC
+
+iptables -A input -p tcp --dport 22 -j ACCEPT
+iptables -A output -p tcp --dport 22 -j ACCEPT
+
+iptables -A ACCEPTED_MAC -m mac --mac-source  xxxx  -j ACCEPT
+
+# comment the below line to disable the ACCEPTED_MAC chain
+iptables -A INPUT -j ACCEPTED_MAC 
+
+iptables -P OUTPUT DROP
+iptables -P INPUT DROP
+

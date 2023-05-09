@@ -1,0 +1,16 @@
+
+Incoming -> PREROUTING -> INPUT
+Incoming -> PREROUTING -> FORWARD -> POSTROUTING
+Local Application -> OUTPUT -> POSTROUTING
+
+
+inbound backets
+
+inbound packet
+-> raw table PREROUTING
+-> mangle table PREROUTING
+-> nat table PREROUTING
+    is final dest -> NO -> go to mangle table and FORWARD chain
+    is final dest -> yes 
+        -> mangle table input chain
+        -> filter table input chain -> local process 

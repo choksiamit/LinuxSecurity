@@ -1,0 +1,23 @@
+
+
+# block ip
+
+iptables -I INPUT -s $1 -j DROP
+
+
+
+# block connection packets from server 2
+
+start ping to s1 from s2 
+
+server 1
+
+iptables -nvL
+./iptables_block.sh 
+
+# block service
+
+iptables -I INPUT -s $1 -p $2 -j DROP
+
+
+

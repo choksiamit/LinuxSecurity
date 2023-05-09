@@ -1,0 +1,42 @@
+Linux Security: The Complete Iptables Firewall Guide
+Course image
+86. Commands - User-defined Chains
+Play
+84. Intro to User-defined Chains
+3min
+Play
+85. Implementing User-defined Chains
+6min
+Start
+86. Commands - User-defined Chains
+1min
+Play
+87. Firewall Refactoring with User-defined Chains
+5min
+Start
+88. Script - Firewall Refactoring
+1min
+Get the app
+About us
+Help and Support
+Terms
+Privacy policy
+Sitemap
+Accessibility statement
+© 2023 Udemy, Inc.
+86. Commands - User-defined Chains
+Commands - User-defined Chains
+# creating a user-defined chain
+iptables -N TCP_TRAFFIC
+ 
+# add rules to the chain
+iptables -A TCP_TRAFFIC -p tcp -j ACCEPT
+ 
+# jump to the chain from the input chain
+iptables -A INPUT -p tcp -j TCP_TRAFFIC
+ 
+# flush all rules in the chain
+iptables -F TCP_TRAFFIC
+ 
+# delete the chain
+iptables -X TCP_TRAFFIC

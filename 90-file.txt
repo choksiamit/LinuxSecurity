@@ -1,0 +1,15 @@
+outgoing packets
+
+packet generated
+
+    -> raw table OUTPUT CHAIN
+    -> MANGLE TABLE OUTPUT CHAIN
+    -> nat TABLE OUTPUT CHAIN
+    -> FILTER TABLE OUTPUT CHAIN
+        IS PACKET ROUTABLE
+            NO      DROP PACKET
+            YES 
+                MANGLE TABLE POSTROUTING CHAIN
+                NAT TABLE POSTROUTING CHAIN 
+                    -> OUTGOING Interface
+

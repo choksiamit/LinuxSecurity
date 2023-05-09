@@ -1,0 +1,41 @@
+
+1. ** Master Python Programming: The Complete Python Bootcamp **
+
+https://www.udemy.com/course/master-python-programming-complete-python-bootcamp/?referralCode=FC9F31FDEA08A7E0843A
+
+2. ** OpenAI API with Python Bootcamp: ChatGPT API, GPT-3, DALL·E **
+
+https://www.udemy.com/course/openai-api-chatgpt-gpt4-with-python-bootcamp/?referralCode=010CD6B9D29CD73B5CCA
+
+3. ** Master Network Automation with Python for Network Engineers **
+
+https://www.udemy.com/course/master-python-network-automation-for-network-engineers/?referralCode=30F325FFE457DFCCF28D
+
+4. ** Master Ethereum & Solidity Programming: Build Real-World Apps **
+
+https://www.udemy.com/course/master-ethereum-and-solidity-programming-with-real-world-apps/?referralCode=43C2CA3830F61BA72260
+
+5. ** Master Linux Administration: The Complete Linux Bootcamp (Part 1) **
+
+https://www.udemy.com/course/master-linux-administration/?referralCode=5A73F397CE26D96B6CD9
+
+6. ** Linux Administration: Build 5 Hands-On Linux Projects (Part 2) **
+
+https://www.udemy.com/course/linux-administration-build-hands-on-linux-projects/?referralCode=BC731F1C68A52E816159
+
+7. ** Hands-On Ethical Hacking and Network Security Applied **
+
+https://www.udemy.com/course/ethical-hacking-and-network-security-applied/?referralCode=191006FD612117D05A9F
+
+8. ** Linux Security: The Complete Iptables Firewall Guide **
+
+https://www.udemy.com/course/linux-security-the-complete-iptables-firewall-guide/?referralCode=36A7315343CFB110068B
+
+9. ** Master Go Programming: The Complete Go Bootcamp **
+
+https://www.udemy.com/course/master-go-programming-complete-golang-bootcamp/?referralCode=C8882D81E86B5771009F
+
+10. ** DevOps Bootcamp: Terraform **
+
+https://www.udemy.com/course/devops-bootcamp-terraform-certification/?referralCode=6BCB89812C1CD43FB717
+

@@ -1,0 +1,28 @@
+input output forward custom
+iptables -N MYCHAIN
+iptables -vnL
+iptables -A MYCHAIN -p icm --icmp-type echo-request -j DROP
+
+to invoke this we have to jump from one 
+of the standard chains
+
+iptables -A INPUT -j MYCHAIN
+
+packets traverse the input chain
+jump to the custom chain
+if no action taken in custom chain, 
+packet will return to default chain
+until they are accepted or dropped
+
+#delete
+iptables -X MYCHAIN
+
+only works if all rules are deleted
+from the chain.
+
+iptables -vnL
+
+iptables -X MYCHAIN
+there is a reference to this chain
+from the input chain.
+all references have to be removed
